@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}-front
+  name: {{ .Values.appName }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.appName }}-front
+      app: {{ .Values.appName }}
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}-front
+        app: {{ .Values.appName }}
     spec:
       containers:
-        - name: {{ .Values.appName }}-front
+        - name: {{ .Values.appName }}
           image: jenne09/challenge-e06-front:v2
           env:
-            - name: {{ .Values.envName }}
+            - name: {{ .Values.varName }}
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.configMapName }}
-                  key: {{ .Values.configKey }}
-            - name: {{ .Values.nameConfig }}
+                  key: {{ .Values.varConfigMapName }}
+            - name: {{ .Values.varBackend }}
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.configMapName }}
-                  key: {{ .Values.configKey }}
+                  key: {{ .Values.varBackend }}
           resources:
             limits:
               cpu: "0.1"
