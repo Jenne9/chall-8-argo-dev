@@ -1,5 +1,5 @@
 appName: "dev-deploy"
 envName: "mon_env"
-nameConfig: "dev"
+nameConfig: "BACKEND_URL"
 configMapName: "dev"
 configKey: "BACKEND_URL"
