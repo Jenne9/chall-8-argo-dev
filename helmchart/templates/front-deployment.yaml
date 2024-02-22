@@ -18,17 +18,18 @@ spec:
         app: {{ .Values.envName }}
     spec:
       containers:
-      - image: jenne09/challenge-e06-front:v2
+        image: jenne09/challenge-e06-front:v2
+        env:
         - name: {{ .Values.envName }}
-          valueFrom:
-            configMapKeyRef:
-              name: {{ .Values.configMapName }}
-              key: {{ .Values.configKey }}
-        - name: {{ .Values.envName }}
-          valueFrom:
-            configMapKeyRef:
-              name: {{ .Values.configMapName }}
-              key: {{ .Values.configKey }}
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Values.configMapName }}
+                key: {{ .Values.configKey }}
+          - name: {{ .Values.envName }}
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Values.configMapName }}
+                key: {{ .Values.configKey }}
         name: challenge-front
         ports:
         - containerPort: 80
