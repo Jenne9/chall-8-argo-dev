@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: {{ .Values.envName }}
-  name: {{ .Values.envName }}
+    app: {{ .Values.appName }}
+  name: {{ .Values.appName }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.envName }}
+      app: {{ .Values.appName }}
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: {{ .Values.envName }}
+        app: {{ .Values.appName }}
     spec:
       containers:
         image: jenne09/challenge-e06-front:v2
