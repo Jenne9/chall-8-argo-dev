@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
         - name: {{ .Values.appName }}-front
-          image: nicodev28/img-front:latest
+          image: jenne09/challenge-e06-front:v2
           env:
             - name: {{ .Values.envName }}
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.configMapName }}
                   key: {{ .Values.configKey }}
-            - name: {{ .Values.envName }}
+            - name: {{ .Values.nameConfig }}
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Values.configMapName }}
