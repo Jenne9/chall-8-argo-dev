@@ -1,4 +1,4 @@
 appName: "dev-deploy"
-envName: "dev"
+envName: "mon_env"
 configMapName: "dev"
 configKey: "MY_OS"
